@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@id/AppBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_500"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="15dp"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_back"
+            android:layout_marginEnd="10dp"
+            app:tint="@color/white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/em_salary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <!--    <include layout="@layout/content_main" />-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/AppBarLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivImage"
+                style="@style/circleImageView"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="20/3/2023"
+                app:layout_constraintStart_toStartOf="@id/ivImage"
+                app:layout_constraintTop_toBottomOf="@+id/ivImage" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="20/3/2023"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="20/3/2023"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/name" />
+
+            <TextView
+                android:id="@+id/salary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="20/3/2023"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivImage" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="15dp"
+        android:paddingBottom="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/card">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp">
+
+                <ImageView
+                    android:id="@+id/ratio_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="65dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/total_salary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_deserve"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@color/garey"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="5dp"
+                    android:id="@+id/deserve_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/red"
+                    android:text="1457ج"
+                    app:layout_constraintStart_toEndOf="@+id/iv_deserve"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="5dp"
+                    android:id="@+id/deserve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/deserve"
+                    app:layout_constraintStart_toEndOf="@+id/deserve_count"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_deductions"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@color/yellow"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/deductions" />
+
+                <TextView
+                    android:layout_marginStart="5dp"
+                    android:id="@+id/deductions_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1457ج"
+                    android:textColor="@color/red"
+                    app:layout_constraintStart_toEndOf="@+id/iv_deductions"
+                    app:layout_constraintTop_toTopOf="@+id/iv_deductions" />
+                <TextView
+                    android:id="@+id/deductions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="@string/deductions"
+                    app:layout_constraintStart_toEndOf="@+id/deductions_count"
+                    app:layout_constraintTop_toBottomOf="@+id/deserve" />
+
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/black_open"
+                    app:layout_constraintEnd_toStartOf="@+id/ratio_image"
+                    app:layout_constraintTop_toBottomOf="@id/deductions" />
+
+                <ImageView
+                    android:id="@+id/iv_total_salary"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_margin="5dp"
+                    android:background="@color/green"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/total_salary" />
+
+                <TextView
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/total_salary_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1457ج"
+                    android:textColor="@color/red"
+                    app:layout_constraintStart_toEndOf="@+id/iv_total_salary"
+                    app:layout_constraintTop_toBottomOf="@+id/line" />
+
+
+                <TextView
+                    android:id="@+id/total_salary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="@string/deductions"
+                    app:layout_constraintStart_toEndOf="@+id/total_salary_count"
+                    app:layout_constraintTop_toBottomOf="@+id/line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="25dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/linear_background"
+                    app:layout_constraintTop_toBottomOf="@+id/ratio_image">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+
+                        android:background="@drawable/top_corner_background">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="م" />
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="40dp"
+                            android:background="@color/lactic"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="البند" />
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="40dp"
+                            android:background="@color/lactic"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="القيمة" />
+
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/lactic"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="1" />
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="40dp"
+                            android:background="@color/lactic"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="مرتب اساسي" />
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="40dp"
+                            android:background="@color/lactic"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="1555 ج" />
+
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/lactic"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@color/lactic">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="2" />
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="40dp"
+                            android:background="@color/lactic"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="طبيعة العمل" />
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="40dp"
+                            android:background="@color/lactic"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="15155 ج" />
+
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/lactic"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@drawable/bottom_corner_background">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="3" />
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="40dp"
+                            android:background="@color/lactic"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+
+                            android:text="استقطاعات اخري" />
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="40dp"
+                            android:background="@color/lactic"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="15155 ج" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="em_salary">emplyee salary</string>
+    <string name="deserve">dues</string>
+    <string name="deductions">deductions</string>
+</resources>
